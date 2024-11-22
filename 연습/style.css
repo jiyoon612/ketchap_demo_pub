@@ -1,0 +1,342 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+:root {
+    /* Main Colors */
+    --main-color1: #BB2B1B; /* Ketchup Red */
+    --main-color2: #FFFFFF; /* Pure White */
+    --main-color3: #F8F9FA; /* Intense White */
+
+    /* Point Colors */
+    --point-color1: #24855B; /* Metallic Green */
+    --point-color2: #FFDB58; /* Mustard */
+}
+.logo {
+    padding: 20px 10px; 
+    transition: all 0.3s ease; /* 부드러운 애니메이션 효과 */
+}
+
+.logo img {
+    width: 57px; 
+    height: auto;
+    display: block;
+    margin: 0;
+    transition: all 0.3s ease; 
+}
+
+.tablet-main-menu:hover .logo img {
+    width: 65px;
+}
+
+.fa-2x {
+font-size: 2em;
+}
+
+.fa {
+    position: relative;
+    display: table-cell;
+    width: 71px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 25px;
+}
+.tablet-main-menu:hover,
+nav.tablet-main-menu.expanded {
+    width: 250px;
+    overflow: visible;
+}
+
+.tablet-main-menu > ul {
+    margin: 7px 0;
+}
+.tablet-main-menu li {
+    position: relative;
+    display: block;
+    width: 250px;
+    margin-left: 4px;
+    margin-bottom: 20px;
+}
+.tablet-main-menu li > a {
+    position: relative;
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: #999;
+    font-family: arial;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.1s linear;
+    padding-left: 10px;
+}
+.tablet-main-menu .nav-icon {
+    position: relative;
+    display: table-cell;
+    width: 60px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    padding-right: 10px;
+}
+.tablet-main-menu .nav-text {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width: 190px;
+    font-family: 'Titillium Web', sans-serif;
+    padding-left: 5px;
+}
+.tablet-main-menu > ul.menu-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.tablet-main-menu li.active > a::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: var(--main-color1);
+    border-radius: 50%;
+}
+.tablet-main-menu li:hover > a,
+nav.tablet-main-menu li.active > a {
+    color: var(--main-color1);;
+}
+.area {
+    float: left;
+    background: #e2e2e2;
+    width: 100%;
+    height: 100%;
+}
+.tablet-main-menu {
+background-color: var(--main-color2);
+border-right:1px solid #e5e5e5;
+position:absolute;
+top:0;
+bottom:0;
+height:100%;
+left:0;
+width:75px;
+overflow:hidden;
+-webkit-transition:width .05s linear;
+transition:width .05s linear;
+-webkit-transform:translateZ(0) scale(1,1);
+z-index:1000;
+}
+
+
+nav ul,nav li {
+outline:0;
+margin:0;
+padding:0;
+}
+.mobile-nav{
+    display: none;
+}
+.web-main-menu{
+    display: none;
+}
+@media screen and (min-width: 1024px) {
+    .tablet-main-menu {
+        display: none; /* 웹 화면에서는 사이드 메뉴 숨김 */
+    }
+    .mobile-nav {
+        display: none;
+    }
+
+    .web-main-menu {
+        display: flex;
+        flex-direction: column; /* 두 줄 구조로 변경 */
+        background-color: var(--main-color2);
+        border-bottom: 1px solid #e5e5e5;
+        padding: 0;
+    }
+
+    .web-main-menu .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: var(--main-color2); 
+        border-bottom: 1px solid #e5e5e5; 
+    }
+
+    .web-main-menu .logo img {
+        width: 50px;
+        height: auto;
+    }
+
+    .web-main-menu .top-links,
+    .web-main-menu .user-links {
+        display: flex;
+        gap: 20px; /* 링크 간격 */
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .logo{
+        padding: 0px;
+    }
+    .web-main-menu .top-links a,
+    .web-main-menu .user-links a {
+        text-decoration: none;
+        font-size: 14px;
+        color: #555;
+        transition: color 0.2s;
+    }
+
+    .web-main-menu .top-links a:hover,
+    .web-main-menu .user-links a:hover {
+        color: var(--main-color1); /* Hover 시 강조 */
+    }
+
+    .web-main-menu .bottom-bar {
+        background-color: var(--main-color2);
+        border-top: 1px solid #e5e5e5;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 하단 그림자 */
+    }
+    
+
+    .web-main-menu .menu-links {
+        display: flex;
+        gap: 40px; /* 메뉴 간격 */
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .web-main-menu .menu-links li {
+        position: relative;
+    }
+
+    .web-main-menu .menu-links a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #555;
+        font-weight: bold; /* 강조 */
+        padding: 5px 10px;
+        transition: color 0.2s, border-bottom 0.2s;
+    }
+
+    .web-main-menu .menu-links li.active a {
+        color: var(--main-color1); 
+        padding-bottom: 3px; /* 간격 조정 */
+    }
+
+    .web-main-menu .menu-links li.active a::after {
+        content: '';
+        display: block;
+        width: 4px;
+        height: 4px;
+        background-color: var(--main-color1);
+        border-radius: 50%;
+        position: absolute;
+        top: -10px; /* 활성화된 메뉴의 텍스트 위로 표시 */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .web-main-menu .menu-links a:hover {
+        color: var(--main-color1); /* Hover 시 강조 */
+    }
+
+    .web-main-menu .user-menu {
+        display: flex;
+        align-items: center;
+        gap: 20px; /* 사용자 메뉴 간격 */
+    }
+
+    .web-main-menu .user-menu a {
+        text-decoration: none;
+        font-size: 14px;
+        color: #555;
+        font-weight: normal;
+        transition: color 0.2s;
+    }
+
+    .web-main-menu .user-menu a:hover {
+        color: var(--main-color1); /* Hover 시 강조 */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tablet-main-menu {
+        display: none; 
+    }
+    .web-main-menu{
+        display: none;
+    }
+    .fa{
+        width: 71px;
+        height: 25px;
+    }
+    .mobile-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--main-color2);
+        border-top: 1px solid #e5e5e5;
+        padding: 10px 0;
+        z-index: 1000;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* 상단 그림자 */
+    }
+    
+    .mobile-nav ul {
+        display: flex;
+        gap: 20px; /* 아이템 간격 */
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .mobile-nav li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .mobile-nav li a {
+        text-decoration: none;
+        font-size: 12px; /* 텍스트 크기 */
+        color: #555;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: color 0.3s ease;
+    }
+    
+    .mobile-nav li a:hover {
+        color: var(--main-color1); /* Hover 색상 */
+    }
+    
+    .mobile-nav li a i {
+        font-size: 24px; /* 아이콘 크기 */
+        margin-bottom: 5px;
+    }
+    
+    .mobile-nav .menu-button {
+        background-color: var(--main-color1);
+        border-radius: 50%;
+        width: 60px; /* 버튼 크기 */
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--main-color2);
+        font-size: 30px; /* 메뉴 버튼 아이콘 크기 */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 */
+        position: relative;
+        top: -20px; /* 약간 위로 띄움 */
+        z-index: 10; /* 버튼이 위로 보이도록 설정 */
+    }
+    
+}

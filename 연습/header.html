@@ -32,17 +32,56 @@
         </div>
     
         <!-- web-main 하단 바 -->
-        <div class="bottom-bar py-3">
+        <div class="bottom-bar py-3 position-relative">
             <ul class="menu-links d-flex justify-content-center list-unstyled m-0">
-                <li class="me-4"><a href="#" class="text-dark text-decoration-none">KETSUP</a></li>
-                <li class="me-4"><a href="#" class="text-dark text-decoration-none">TOPIK</a></li>
-                <li class="me-4 active">
+                <li class="me-4" data-menu="ketsup">
+                    <a href="#" class="text-dark text-decoration-none">KETSUP</a>
+                </li>
+                <li class="me-4" data-menu="topik">
+                    <a href="#" class="text-dark text-decoration-none">TOPIK</a>
+                </li>
+                <li class="me-4 active" data-menu="education">
                     <a href="#" class="text-danger text-decoration-none fw-bold">EDUCATION</a>
                 </li>
-                <li class="me-4"><a href="#" class="text-dark text-decoration-none">EVENT</a></li>
-                <li><a href="#" class="text-dark text-decoration-none">QnA</a></li>
+                <li class="me-4" data-menu="event">
+                    <a href="#" class="text-dark text-decoration-none">EVENT</a>
+                </li>
+                <li data-menu="qna">
+                    <a href="#" class="text-dark text-decoration-none">QnA</a>
+                </li>
             </ul>
+    
+            <!-- 통합 서브메뉴 -->
+            <div class="sub-menu-wrapper">
+                <ul class="sub-menu">
+                    <li class="sub-menu-item me-4" data-menu="ketsup">
+                        <a href="#">KETSUP 소개</a>
+                        <a href="#">연혁</a>
+                    </li>
+                    <li class="sub-menu-item me-4" data-menu="topik">
+                        <a href="#">TOPIK 소개</a>
+                        <a href="#">KETSUP 모의고사</a>
+                        <a href="#">모의고사 응시</a>
+                    </li>
+                    <li class="sub-menu-item active me-4" data-menu="education">
+                        <a href="#">전체 커리큘럼</a>
+                        <a href="#">강사</a>
+                        <a href="#">강의</a>
+                        <a href="#">강의 교재</a>
+                    </li>
+                    <li class="sub-menu-item me-4" data-menu="event">
+                        <a href="#">이벤트</a>
+                        <a href="#">레벨 테스트</a>
+                        <a href="#">학습 MBTI</a>
+                    </li>
+                    <li class="sub-menu-item me-4" data-menu="qna">
+                        <a href="#">질문 목록</a>
+                        <a href="#">문의하기</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+             
     </nav>
     
     <nav class="tablet-main-menu">
@@ -145,6 +184,15 @@
 </nav>
 </body>
 <script>
+    document.querySelectorAll('.menu-links li').forEach((menuItem, index) => {
+    menuItem.addEventListener('mouseover', () => {
+        document.querySelector('.sub-menu-wrapper').style.display = 'block';
+    });
+    menuItem.addEventListener('mouseout', () => {
+        document.querySelector('.sub-menu-wrapper').style.display = 'none';
+    });
+});
+
     document.addEventListener('DOMContentLoaded', () => {
     const menuLinks = document.querySelectorAll('.web-main-menu .menu-links li a');
     
